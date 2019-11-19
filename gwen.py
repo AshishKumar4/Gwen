@@ -111,11 +111,15 @@ window = None
 
 def increaseVolume(lvl=1):
     print("Increasing Volume by ", lvl, "level")
+    global window 
+    window.player.audio_set_volume(window.player.audio_get_volume() + lvl*5)
     return 1
 
 
 def decreaseVolume(lvl=1):
     print("Decreasing Volume by ", lvl, "level")
+    global window 
+    window.player.audio_set_volume(window.player.audio_get_volume() - lvl*5)
     return 1
 
 
@@ -143,6 +147,11 @@ def play():
     global window
     window.player.play()
     return 1
+
+def replay():
+    print("Replaying Video...")
+    stop()
+    play()
 
 ######################################################################################################################
 ########################################## Initializers and Main func ################################################
@@ -173,6 +182,7 @@ if __name__ == '__main__':
     server.register_function(stop, 'stop')
     server.register_function(pause, 'pause')
     server.register_function(play, 'play')
+    server.register_function(replay, 'replay')
     serverThread = threading.Thread(target=server.serve_forever, args=()) # Launch RPC server to server Asynchronously
 
 ######################################################################################################################
