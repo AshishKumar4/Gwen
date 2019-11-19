@@ -19,7 +19,7 @@ MRL = ""    # Path to our video
 class ApplicationWindow(Gtk.Window):
 
     def __init__(self):
-        Gtk.Window.__init__(self, title="Python-Vlc Media Player")
+        Gtk.Window.__init__(self, title="Gwen Gesture Controlled Media Player")
         self.player_paused = False
         self.is_player_active = False
         self.connect("destroy", Gtk.main_quit)
