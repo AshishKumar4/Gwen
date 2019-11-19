@@ -183,7 +183,7 @@ if __name__ == '__main__':
     server.register_function(pause, 'pause')
     server.register_function(play, 'play')
     server.register_function(replay, 'replay')
-    serverThread = threading.Thread(target=server.serve_forever, args=()) # Launch RPC server to server Asynchronously
+    serverThread = threading.Thread(target=server.serve_forever, args=()) # Launch RPC server to serve Asynchronously
 
 ######################################################################################################################
 ############################################## Media player setup ####################################################
